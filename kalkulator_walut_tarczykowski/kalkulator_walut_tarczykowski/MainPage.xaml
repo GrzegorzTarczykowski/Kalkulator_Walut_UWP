@@ -14,9 +14,9 @@
                 <TextBlock Text=": " Margin="0, 0, 20, 0"/>
                 <TextBlock Text="{Binding kod_waluty}"/>
             </StackPanel>
-        </DataTemplate>              
+        </DataTemplate>
     </Page.Resources>
-    
+
     <Grid Background="LightBlue" Loaded="Grid_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -26,18 +26,18 @@
         <StackPanel Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5, 5, 5, 5">
                 <TextBlock Text="z waluty:" FontSize="20" TextAlignment="Right"  Width="150" Margin="0, 0, 15, 0"/>
-                <TextBox x:Name="txtKwota" TextAlignment="Right" Width="200" Margin="15, 0, 0, 0" TextChanged="txtKwota_TextChanged"/>
+                <TextBox Name="txtKwota" InputScope="Number" TextAlignment="Right" Width="200" Margin="15, 0, 0, 0" TextChanged="txtKwota_TextChanged" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5, 5, 5, 5">
                 <TextBlock Text="przeliczone:" FontSize="20" TextAlignment="Right" Width="150" Margin="0, 0, 15, 0"/>
-                <TextBlock x:Name="tbPrzeliczonna" Text="0" TextAlignment="Right" Width="200" Margin="15, 0, 0, 0"/>
+                <TextBlock x:Name="tbPrzeliczona" Text="0" TextAlignment="Right" Width="200" Margin="15, 0, 0, 0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5, 5, 5, 5">
                 <TextBlock Text="z waluty  -->  na walutę" FontSize="20"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5, 5, 5, 5">
-                <ListBox x:Name="lbxZWaluty" ItemTemplate="{StaticResource WalutyItemTemplate}" Width="150" Height="300" Margin="5, 5, 5, 5"/>
-                <ListBox x:Name="lbxNaWalute" ItemTemplate="{StaticResource WalutyItemTemplate}" Width="150" Height="300" Margin="5, 5, 5, 5"/>
+                <ListBox x:Name="lbxZWaluty" ItemTemplate="{StaticResource WalutyItemTemplate}" Width="150" Height="300" Margin="5, 5, 5, 5" SelectionChanged="lbxZWaluty_SelectionChanged"/>
+                <ListBox x:Name="lbxNaWalute" ItemTemplate="{StaticResource WalutyItemTemplate}" Width="150" Height="300" Margin="5, 5, 5, 5" SelectionChanged="lbxZWaluty_SelectionChanged"/>
             </StackPanel>
             <Button Content="O Programie" Margin="5, 5, 5, 5" HorizontalAlignment="Right"/>
         </StackPanel>
